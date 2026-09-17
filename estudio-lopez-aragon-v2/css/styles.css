@@ -5,7 +5,7 @@
   /* Verde Inglés */
   --color-green-darkest: #0d2217;
   --color-green-bg: #132e20;
-  --color-green-card: #1c3c2c;          /* Verde exacto de la muestra */
+  --color-green-card: #1c3c2c;          /* Verde exacto de la firma */
   --color-green-card-hover: #244e39;
   --color-green-light: #2e6248;
 
@@ -727,7 +727,23 @@ a {
   color: var(--color-gold);
   font-weight: 500;
   display: block;
+  margin-bottom: 0.4rem;
+}
+
+/* Mail de cada abogado en la tarjeta */
+.team-email {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
   margin-bottom: 1.2rem;
+  transition: var(--transition);
+  word-break: break-all;
+}
+
+.team-email:hover {
+  color: var(--color-gold-light);
+  text-decoration: underline;
 }
 
 .team-whatsapp-link {
@@ -883,7 +899,7 @@ a {
 }
 
 /* ==========================================================================
-   CLIENTES: MARQUEE CONTINUO (A TODO COLOR)
+   CLIENTES: MARQUEE CONTINUO (MARFIL + LOGOS MAXIMIZADOS)
    ========================================================================== */
 .clients-section {
   padding: clamp(3rem, 6vw, 5rem) 0;
@@ -906,7 +922,7 @@ a {
   display: flex;
   gap: 2rem;
   width: max-content;
-  animation: marqueeScroll 85s linear infinite;
+  animation: marqueeScroll 115s linear infinite;
   padding: 1rem 0;
 }
 
@@ -914,41 +930,42 @@ a {
   animation-play-state: paused;
 }
 
-/* Tarjeta con altura de 180px y padding de 25px */
+/* Tarjeta en tono marfil con padding mínimo para ganar área útil */
 .client-item {
   width: 250px;
-  height: 180px;
-  background-color: var(--color-green-card);
-  border: 1px solid var(--color-border-green);
-  border-radius: 4px;
+  height: 160px;
+  background-color: #f5f4ef;
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 25px;
+  padding: 8px 12px;
   flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
   transition: var(--transition);
 }
 
 .client-item:hover {
   border-color: var(--color-gold);
-  background-color: var(--color-green-card-hover);
   transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* Logos a todo color y nítidos */
+/* Logos maximizados al límite físico de la tarjeta */
 .client-item img {
-  max-height: 110px;
-  max-width: 170px;
   width: auto;
   height: auto;
+  max-width: 90%;
+  max-height: 85%;
   object-fit: contain;
-  filter: none;            /* Sin escala de grises, colores originales */
-  opacity: 1;              /* 100% de nitidez y brillo */
-  transition: var(--transition);
+  filter: none;            /* Color pleno original siempre */
+  opacity: 1;              /* Nitidez al 100% */
+  transition: transform 0.35s ease;
 }
 
 .client-item:hover img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 @keyframes marqueeScroll {
@@ -957,7 +974,7 @@ a {
 }
 
 /* ==========================================================================
-   CONTACTO
+   CONTACTO (TABLA PERFECTAMENTE ALINEADA)
    ========================================================================== */
 .contact-section {
   padding: clamp(3.5rem, 8vw, 6rem) 0;
@@ -1024,39 +1041,62 @@ a {
 .team-contacts-list {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 0.2rem;
   width: 100%;
 }
 
 .team-contacts-list strong {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
 }
 
 .lawyer-contact-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.86rem;
-  padding: 0.25rem 0;
-  border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.12);
+  gap: 1rem;
 }
 
 .lawyer-contact-item:last-child {
   border-bottom: none;
 }
 
-.lawyer-contact-item span {
-  color: var(--color-text-muted);
+.contact-name {
+  color: #ffffff;
+  font-size: 0.88rem;
   font-weight: 500;
 }
 
-.lawyer-contact-item a {
+.contact-data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 0.15rem;
+}
+
+.contact-phone {
   color: var(--color-gold);
   font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.3px;
   transition: var(--transition);
 }
 
-.lawyer-contact-item a:hover {
+.contact-phone:hover {
+  color: var(--color-gold-light);
+  text-decoration: underline;
+}
+
+.contact-email {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  transition: var(--transition);
+}
+
+.contact-email:hover {
   color: var(--color-gold-light);
   text-decoration: underline;
 }
@@ -1270,14 +1310,15 @@ textarea.custom-input {
     justify-content: center;
   }
 
+  /* Responsive de tarjetas de clientes */
   .client-item {
     width: 200px;
-    height: 150px;
-    padding: 18px;
+    height: 130px;
+    padding: 6px 10px;
   }
   .client-item img {
-    max-height: 90px;
-    max-width: 140px;
+    max-width: 92%;
+    max-height: 85%;
   }
 }
 
@@ -1308,6 +1349,19 @@ textarea.custom-input {
   }
 }
 
+@media (max-width: 520px) {
+  .lawyer-contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .contact-data {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
 @media (max-width: 480px) {
   .container {
     width: 92%;
@@ -1320,10 +1374,5 @@ textarea.custom-input {
   }
   .facility-thumbnails {
     gap: 0.3rem;
-  }
-  .lawyer-contact-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.15rem;
   }
 }
