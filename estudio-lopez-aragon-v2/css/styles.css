@@ -1037,6 +1037,23 @@ a {
   color: var(--color-gold);
 }
 
+.contact-area-subtitle {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-top: 0.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.contact-area-subtitle.area-contable {
+  margin-top: 1rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed rgba(197, 160, 89, 0.25);
+}
+
 /* Lista de contactos directos */
 .team-contacts-list {
   display: flex;
