@@ -2,19 +2,16 @@
    PALETA ESTILO ORIGINAL: VERDE INGLÉS ENCENDIDO + DORADOS INSTITUCIONALES
    ========================================================================== */
 :root {
-  /* Verde Inglés */
   --color-green-darkest: #0d2217;
   --color-green-bg: #132e20;
-  --color-green-card: #1c3c2c;          /* Verde exacto de la firma */
+  --color-green-card: #1c3c2c;
   --color-green-card-hover: #244e39;
   --color-green-light: #2e6248;
 
-  /* Dorados */
   --color-gold: #c5a059;
   --color-gold-light: #e8cf99;
   --color-gold-dark: #9a7635;
 
-  /* Textos y Bordes */
   --color-text-white: #ffffff;
   --color-text-muted: #bad0c4;
   --color-border: rgba(197, 160, 89, 0.25);
@@ -542,7 +539,6 @@ a {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.45);
 }
 
-/* Caja de contraste para el logo de Crowe */
 .crowe-logo-box {
   background-color: #ffffff;
   padding: 1.2rem 1.5rem;
@@ -628,6 +624,11 @@ a {
   line-height: 1.6;
 }
 
+.solution-desc strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
 /* ==========================================================================
    EQUIPO PROFESIONAL (RESPONSIVE Y ROSTROS CENTRADOS)
    ========================================================================== */
@@ -673,7 +674,6 @@ a {
   transition: transform 0.4s ease;
 }
 
-/* Calibraciones en Desktop */
 .team-img.img-ricardo { object-position: center 96%; }
 .team-img.img-seade   { object-position: center 90%; }
 .team-img.img-tomas   { object-position: center 84%; }
@@ -730,7 +730,6 @@ a {
   margin-bottom: 0.4rem;
 }
 
-/* Mail de cada abogado en la tarjeta */
 .team-email {
   display: block;
   font-size: 0.76rem;
@@ -764,6 +763,141 @@ a {
 .team-whatsapp-link:hover {
   background-color: #25d366;
   color: #fff;
+}
+
+/* ==========================================================================
+   ÁREA CONTABLE (SUBSECCIÓN DE CUERPO PROFESIONAL)
+   ========================================================================== */
+.accounting-team-section {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px dashed rgba(197, 160, 89, 0.2);
+}
+
+.accounting-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.accounting-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--color-gold);
+  text-transform: uppercase;
+}
+
+.accounting-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  color: var(--color-text-white);
+  margin-top: 0.3rem;
+  letter-spacing: 0.5px;
+}
+
+.accounting-divider {
+  width: 45px;
+  height: 2px;
+  background-color: var(--color-gold);
+  margin: 0.6rem auto 0;
+}
+
+.accounting-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.accounting-card {
+  background: linear-gradient(135deg, var(--color-green-card) 0%, #153324 100%);
+  border: 1px solid var(--color-border-green);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 4px;
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: var(--transition);
+}
+
+.accounting-card:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  background: var(--color-green-card-hover);
+}
+
+.accounting-icon {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(197, 160, 89, 0.12);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.accounting-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex-grow: 1;
+}
+
+.accounting-name {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--color-text-white);
+  letter-spacing: 0.5px;
+}
+
+.accounting-role {
+  font-size: 0.78rem;
+  color: var(--color-gold);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.accounting-contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.acc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  transition: var(--transition);
+}
+
+.acc-email {
+  color: var(--color-text-muted);
+}
+
+.acc-email:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.acc-wa {
+  color: var(--color-gold-light);
+  font-weight: 600;
+}
+
+.acc-wa:hover {
+  color: #25d366;
+}
+
+.acc-link i {
+  font-size: 0.9rem;
 }
 
 /* ==========================================================================
@@ -930,7 +1064,6 @@ a {
   animation-play-state: paused;
 }
 
-/* Tarjeta en tono marfil con padding mínimo para ganar área útil */
 .client-item {
   width: 250px;
   height: 160px;
@@ -952,15 +1085,14 @@ a {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* Logos maximizados al límite físico de la tarjeta */
 .client-item img {
   width: auto;
   height: auto;
   max-width: 90%;
   max-height: 85%;
   object-fit: contain;
-  filter: none;            /* Color pleno original siempre */
-  opacity: 1;              /* Nitidez al 100% */
+  filter: none;
+  opacity: 1;
   transition: transform 0.35s ease;
 }
 
@@ -1037,6 +1169,17 @@ a {
   color: var(--color-gold);
 }
 
+.team-contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  width: 100%;
+}
+
+.team-contacts-list strong {
+  margin-bottom: 0.4rem;
+}
+
 .contact-area-subtitle {
   display: block;
   font-size: 0.75rem;
@@ -1052,18 +1195,6 @@ a {
   margin-top: 1rem;
   padding-top: 0.6rem;
   border-top: 1px dashed rgba(197, 160, 89, 0.25);
-}
-
-/* Lista de contactos directos */
-.team-contacts-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  width: 100%;
-}
-
-.team-contacts-list strong {
-  margin-bottom: 0.4rem;
 }
 
 .lawyer-contact-item {
@@ -1327,7 +1458,15 @@ textarea.custom-input {
     justify-content: center;
   }
 
-  /* Responsive de tarjetas de clientes */
+  .accounting-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+
+  .accounting-card {
+    padding: 1.2rem;
+  }
+
   .client-item {
     width: 200px;
     height: 130px;
