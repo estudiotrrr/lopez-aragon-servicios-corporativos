@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================
-     3. Envío Real del Formulario vía AJAX (Directo al mail)
+     3. Envío Real del Formulario vía AJAX
   ========================================================== */
   if (formContacto) {
     formContacto.addEventListener('submit', async (e) => {
