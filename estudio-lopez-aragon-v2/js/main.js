@@ -7,7 +7,55 @@ document.addEventListener('DOMContentLoaded', () => {
   const formFeedback = document.getElementById('formFeedback');
 
   /* ==========================================================
-     1. Menú Hamburguesa Mobile
+     1. Desofuscación Dinámica de Contactos (Protección anti-scraping)
+  ========================================================== */
+  // Emails
+  document.querySelectorAll('.secure-mail').forEach(el => {
+    const encoded = el.getAttribute('data-mail');
+    if (encoded) {
+      const email = atob(encoded);
+      el.href = `mailto:${email}`;
+      const span = el.querySelector('span');
+      if (span) {
+        span.textContent = email;
+      } else {
+        el.textContent = email;
+      }
+    }
+  });
+
+  // Enlaces de WhatsApp e insignias (Badges)
+  document.querySelectorAll('.secure-wa-badge, .secure-wa-btn').forEach(el => {
+    const waEncoded = el.getAttribute('data-wa');
+    const msgEncoded = el.getAttribute('data-msg');
+    if (waEncoded) {
+      const wa = atob(waEncoded);
+      const msg = msgEncoded ? encodeURIComponent(atob(msgEncoded)) : '';
+      el.href = `https://wa.me/${wa}?text=${msg}`;
+    }
+  });
+
+  // Números telefónicos en texto y enlaces de WhatsApp
+  document.querySelectorAll('.secure-tel-link').forEach(el => {
+    const waEncoded = el.getAttribute('data-wa');
+    const telEncoded = el.getAttribute('data-tel');
+    const msgEncoded = el.getAttribute('data-msg');
+    if (waEncoded && telEncoded) {
+      const wa = atob(waEncoded);
+      const tel = atob(telEncoded);
+      const msg = msgEncoded ? encodeURIComponent(atob(msgEncoded)) : '';
+      el.href = `https://wa.me/${wa}?text=${msg}`;
+      const span = el.querySelector('span');
+      if (span) {
+        span.textContent = tel;
+      } else {
+        el.textContent = tel;
+      }
+    }
+  });
+
+  /* ==========================================================
+     2. Menú Hamburguesa Mobile
   ========================================================== */
   if (menuToggle && navbar) {
     menuToggle.addEventListener('click', () => {
@@ -24,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================
-     2. Header Compacto al Scroll & Scrollspy
+     3. Header Compacto al Scroll & Scrollspy
   ========================================================== */
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -57,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================
-     3. Envío Real del Formulario vía AJAX
+     4. Envío Seguro del Formulario vía AJAX a enviar.php
   ========================================================== */
   if (formContacto) {
     formContacto.addEventListener('submit', async (e) => {
@@ -102,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================
-   4. Galería Interactiva de Fotos del Estudio
+   5. Galería Interactiva de Fotos del Estudio
 ========================================================== */
 function cambiarFotoEstudio(src, el) {
   const currentImg = document.getElementById('currentStudioImg');

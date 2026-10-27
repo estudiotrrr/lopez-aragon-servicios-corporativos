@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PALETA: VERDE INGLÉS + DORADOS INSTITUCIONALES
+   PALETA INSTITUCIONAL: VERDE INGLÉS + DORADOS
    ========================================================================== */
 :root {
   --color-green-darkest: #0d2217;
@@ -630,7 +630,7 @@ a {
 }
 
 /* ==========================================================================
-   EQUIPO PROFESIONAL (RESPONSIVE Y ROSTROS CENTRADOS)
+   EQUIPO PROFESIONAL
    ========================================================================== */
 .team-section {
   padding: clamp(3.5rem, 8vw, 6rem) 0;
@@ -766,7 +766,7 @@ a {
 }
 
 /* ==========================================================================
-   ÁREA CONTABLE (SUBSECCIÓN DE CUERPO PROFESIONAL)
+   ÁREA CONTABLE
    ========================================================================== */
 .accounting-team-section {
   margin-top: clamp(2.5rem, 5vw, 4rem);
@@ -901,7 +901,7 @@ a {
 }
 
 /* ==========================================================================
-   NOVEDADES E INDUSTRIAS CLAVE (CON BANNER DE EVENTO UNLOCK)
+   NOVEDADES E INDUSTRIAS CLAVE
    ========================================================================== */
 .news-section {
   padding: clamp(3.5rem, 8vw, 6rem) 0;
@@ -1045,16 +1045,111 @@ a {
   font-weight: 500;
 }
 
-.event-action {
+/* ==========================================================================
+   EJES TEMÁTICOS Y SPEAKERS - EVENTO UNLOCK
+   ========================================================================== */
+.event-topics {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 1.2rem 0 1.5rem;
+  padding: 1rem 1.2rem;
+  background: rgba(13, 34, 23, 0.45);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 3px;
+}
+
+.topic-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.topic-item i {
+  color: var(--color-gold);
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
   flex-shrink: 0;
 }
 
-.btn-event-register {
-  display: inline-flex;
+.topic-item strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.event-speakers {
+  margin: 1.5rem 0;
+  border-top: 1px dashed rgba(197, 160, 89, 0.25);
+  padding-top: 1.2rem;
+}
+
+.speakers-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.speaker-card {
+  display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.9rem 1.8rem;
-  white-space: nowrap;
+  gap: 1rem;
+  background: rgba(13, 34, 23, 0.75);
+  border: 1px solid var(--color-border-green);
+  padding: 0.8rem 1.1rem;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.speaker-card:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+  background: var(--color-green-card-hover);
+}
+
+.speaker-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(197, 160, 89, 0.15);
+  border: 1px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.speaker-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.speaker-name {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.speaker-role {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+  line-height: 1.35;
 }
 
 /* ==========================================================================
@@ -1262,6 +1357,18 @@ a {
   text-decoration: underline;
 }
 
+.contact-email {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  transition: var(--transition);
+}
+
+.contact-email:hover {
+  color: var(--color-gold-light);
+  text-decoration: underline;
+}
+
 .contact-form-box {
   background-color: var(--color-green-card);
   padding: clamp(1.5rem, 4vw, 2.5rem);
@@ -1400,13 +1507,6 @@ textarea.custom-input {
   .event-content {
     flex-direction: column;
     align-items: flex-start;
-  }
-  .event-action {
-    width: 100%;
-    margin-top: 1rem;
-  }
-  .btn-event-register {
-    width: 100%;
   }
 
   .team-grid {
