@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // 1. Correo que recibirá las consultas
-$destinatario = 'tomas@juridicolopezaragon.com'; 
+$destinatario = 'tomas@juridicolopezaragon.com';
 
 // 2. Sanitización de campos
 $nombre   = htmlspecialchars(trim($_POST['nombre'] ?? ''));
